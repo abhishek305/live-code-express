@@ -1,0 +1,54 @@
+<!-- Blogs page html -->
+
+{% extends "pages/index.html" %} {% block content %}
+
+<h1 style="
+    color: rgb(78, 78, 78);
+    margin-left: 18px;
+    margin-right: 18px;
+    margin-top: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+  ">
+  Welcome To ContentStack Blogs
+</h1>
+<br /><br />
+{% for blogdetails in blog.entries %}
+
+<div class="flex-container" style="text-align: center;">
+  <div style="
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: flex-start;
+    ">
+    <div style="height: 200px;">
+      <amp-img width="300px" height="180px" src="{{blogdetails.image.url}}">
+      </amp-img>
+    </div>
+    <div style="width: 400px; text-align: justify;">
+      <a style="text-decoration: none; color: #5b6167;" href="/blog{{blogdetails.url}}">
+        <h2 style="
+            cursor: pointer;
+            color: rgb(70, 67, 67);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.7em;
+            margin-top: 1px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+          ">
+          {{blogdetails.heading}}
+        </h2>
+      </a>
+      <p style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+        {{blogdetails.body}}
+      </p>
+      <a style="text-decoration: none; color: black;" href="/blog{{blogdetails.url}}">See More..</a>
+    </div>
+  </div>
+</div>
+
+{% endfor %}
+<br /><br />
+{% endblock %}

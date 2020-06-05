@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script
+      async
+      custom-element="amp-live-list"
+      src="https://cdn.ampproject.org/v0/amp-live-list-0.1.js"
+    ></script>
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+
+        to {
+          visibility: visible;
+        }
+      }
+
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+
+        to {
+          visibility: visible;
+        }
+      }
+
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+
+        to {
+          visibility: visible;
+        }
+      }
+
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+
+        to {
+          visibility: visible;
+        }
+      }
+
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript>
+      <style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style>
+    </noscript>
+    <title>Contentstack Web Page</title>
+    <link
+      rel="canonical"
+      href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "Open-source framework for publishing content",
+        "datePublished": "2015-10-07T12:02:41Z",
+        "image": ["logo.jpg"]
+      }
+    </script>
+    <style amp-custom>
+      amp-live-list {
+        margin: 3em auto 4em;
+        max-width: 800px;
+        min-width: 260px;
+      }
+
+      amp-live-list h3 {
+        font-size: 2.5rem;
+        margin: 1em 15px 0.5em;
+      }
+
+      amp-live-list p {
+        margin: 1em 15px;
+        font-size: 22px;
+        color: #252525;
+        line-height: 160%;
+        text-decoration: none;
+      }
+
+      section p {
+        font-weight: bold;
+      }
+
+      body {
+        margin: 0;
+        font-family: Helvetica, sans-serif;
+        background-color: #f4f4f4;
+      }
+
+      a {
+        color: #000;
+      }
+
+      #logo {
+        width: 181px;
+        height: 60px;
+        margin-left: 10px;
+        margin-top: 5px;
+      }
+
+      /* header */
+
+      .header {
+        background-color: #fff;
+        box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        z-index: 3;
+      }
+
+      .header ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+        background-color: #fff;
+      }
+
+      .header li a {
+        display: block;
+        padding: 20px 20px;
+        border-right: 1px solid #f4f4f4;
+        text-decoration: none;
+      }
+
+      .header li a:hover,
+      .header .menu-btn:hover {
+        background-color: #f4f4f4;
+      }
+
+      .header .logo {
+        display: block;
+        float: left;
+        font-size: 2em;
+        padding: 10px 20px;
+        text-decoration: none;
+      }
+
+      /* menu */
+
+      .header .menu {
+        clear: both;
+        max-height: 0;
+        transition: max-height 0.2s ease-out;
+      }
+
+      /* menu icon */
+
+      .header .menu-icon {
+        cursor: pointer;
+        display: inline-block;
+        float: right;
+        padding: 28px 20px;
+        position: relative;
+        user-select: none;
+      }
+
+      .header .menu-icon .navicon {
+        background: #333;
+        display: block;
+        height: 2px;
+        position: relative;
+        transition: background 0.2s ease-out;
+        width: 18px;
+      }
+
+      .header .menu-icon .navicon:before,
+      .header .menu-icon .navicon:after {
+        background: #333;
+        content: "";
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all 0.2s ease-out;
+        width: 100%;
+      }
+
+      .header .menu-icon .navicon:before {
+        top: 5px;
+      }
+
+      .header .menu-icon .navicon:after {
+        top: -5px;
+      }
+
+      /* menu btn */
+
+      .header .menu-btn {
+        display: none;
+      }
+
+      .header .menu-btn:checked ~ .menu {
+        max-height: 240px;
+      }
+
+      .header .menu-btn:checked ~ .menu-icon .navicon {
+        background: transparent;
+      }
+
+      .header .menu-btn:checked ~ .menu-icon .navicon:before {
+        transform: rotate(-45deg);
+      }
+
+      .header .menu-btn:checked ~ .menu-icon .navicon:after {
+        transform: rotate(45deg);
+      }
+
+      .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+      .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+        top: 0;
+      }
+     
+
+      section img {
+        border: 1px solid white;
+        width: 500px;
+        height: auto;
+      }
+
+      section h3 {
+        color: white;
+      }
+
+      section p {
+        color: rgb(20, 20, 20);
+        width: 600px;
+        padding: 0;
+        margin: 0;
+        line-height: 20px;
+      }
+
+      .main-topic {
+        display: table;
+        margin: 0 auto;
+      }
+
+      .left-text {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      .right-picture {
+        display: table-cell;
+      }
+
+      .right-picture > img {
+        display: block;
+      }
+
+      .clear {
+        clear: both;
+      }
+
+      /* 48em = 768px */
+
+      @media (min-width: 48em) {
+        .header li {
+          float: left;
+        }
+
+        .header li a {
+          padding: 20px 30px;
+        }
+
+        .header .menu {
+          clear: none;
+          float: right;
+          max-height: none;
+        }
+
+        .header .menu-icon {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    {% include "pages/header.html" %} {% block content %} {% endblock %}
+    {%include "pages/footer.html" %}
+  </body>
+</html>

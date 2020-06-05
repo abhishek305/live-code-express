@@ -1,0 +1,9 @@
+{
+    "name": "Start on Heroku: Node.js",
+    "description": "A barebones Node.js app using Express 4",
+    "repository": "https://github.com/abhishek305/live-code-express",
+    "logo": "",
+    "keywords": ["node", "express", "heroku"],
+    "image": "heroku/nodejs"
+  }
+  
